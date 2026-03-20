@@ -1,0 +1,25 @@
+body{
+    background-color: #FFF5E1;
+    font-family: sans-serif;
+    color: #000000;
+    margin: 0;
+}
+header{
+    background-color: #e2a360;
+    padding: 20px;
+    text-align: center;
+    border-bottom: #000000a5 2px solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    
+}
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+nav  li {
+    display: inline block;
+    margin: 0 15px;
+}
