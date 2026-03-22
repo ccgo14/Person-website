@@ -1,25 +1,311 @@
-body{
-    background-color: #FFF5E1;
-    font-family: sans-serif;
-    color: #000000;
+/* =============================================
+   Caleb's Project Showcase — style.css
+   Theme: Black, Blue & Cream
+   ============================================= */
+
+/* --- CSS Variables --- */
+:root {
+    --black:        #0a0d12;
+    --blue-dark:    #0f1e3a;
+    --blue-mid:     #1a3a6b;
+    --blue-accent:  #2563eb;
+    --blue-light:   #60a5fa;
+    --cream:        #fdf6e3;
+    --cream-dark:   #f0e6c8;
+    --text-dark:    #0a0d12;
+    --text-muted:   #4a5568;
+    --border:       #bfdbfe;
+}
+
+/* --- Reset & Base --- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
     margin: 0;
+    padding: 0;
 }
-header{
-    background-color: #e2a360;
-    padding: 20px;
+
+body {
+    background-color: var(--cream);
+    font-family: sans-serif;
+    color: var(--text-dark);
+    margin: 0;
+    line-height: 1.7;
+}
+
+a {
+    color: var(--blue-accent);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* --- Header --- */
+header {
+    background-color: var(--black);
+    color: #ffffff;
+    padding: 20px 40px;
     text-align: center;
-    border-bottom: #000000a5 2px solid;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    
+    border-bottom: var(--blue-accent) 3px solid;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    justify-content: space-between;
 }
+
+header h1 {
+    font-size: 1.9rem;
+    color: #ffffff;
+    letter-spacing: 0.5px;
+}
+
+/* --- Navigation --- */
 nav ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     display: flex;
     gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
-nav  li {
-    display: inline block;
+
+nav li {
+    display: inline-block;
     margin: 0 15px;
+}
+
+nav a {
+    color: var(--blue-light);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.2s;
+}
+
+nav a:hover {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* --- Sections --- */
+section {
+    padding: 60px 40px;
+}
+
+section h2 {
+    font-size: 1.9rem;
+    margin-bottom: 28px;
+    color: var(--blue-dark);
+    border-left: 5px solid var(--blue-accent);
+    padding-left: 16px;
+}
+
+/* --- About Section --- */
+#about {
+    background-color: var(--cream);
+}
+
+.about-content {
+    display: flex;
+    gap: 40px;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1000px;
+}
+
+.about-text {
+    flex: 1;
+    min-width: 260px;
+}
+
+.about-text p {
+    margin-bottom: 14px;
+    font-size: 1.05rem;
+    color: var(--text-dark);
+}
+
+.about-card {
+    background-color: var(--black);
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 30px 36px;
+    text-align: center;
+    min-width: 180px;
+    box-shadow: 0 6px 20px rgba(37, 99, 235, 0.2);
+}
+
+.avatar {
+    display: block;
+    width: 90px;
+    height: 90px;
+    line-height: 90px;
+    border-radius: 50%;
+    background-color: var(--blue-accent);
+    color: #ffffff;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0 auto 14px;
+    border: 3px solid var(--blue-light);
+}
+
+.name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 4px;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: var(--blue-light);
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.tech {
+    font-size: 0.8rem;
+    color: var(--cream-dark);
+    opacity: 0.7;
+}
+
+.avatar {
+    display: block;
+    width: 70px;
+    height: 70px;
+    line-height: 70px;
+    border-radius: 50%;
+    background-color: var(--blue-accent);
+    color: #ffffff;
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 0 auto 14px;
+}
+
+.role {
+    font-size: 0.9rem;
+    color: var(--blue-light);
+    font-weight: 600;
+}
+
+/* --- Skills Section --- */
+#skills {
+    background-color: var(--blue-dark);
+}
+
+#skills h2 {
+    color: #ffffff;
+    border-left-color: var(--blue-light);
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+    max-width: 1000px;
+}
+
+.skill-tag {
+    background-color: var(--blue-accent);
+    color: #ffffff;
+    padding: 8px 22px;
+    border-radius: 999px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* --- Projects Section (CSS Grid) --- */
+#projects {
+    background-color: var(--cream-dark);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 24px;
+    max-width: 1100px;
+}
+
+.project-card {
+    background-color: #ffffff;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 24px rgba(37, 99, 235, 0.2);
+}
+
+.project-icon {
+    font-size: 2rem;
+}
+
+.project-card h3 {
+    font-size: 1.15rem;
+    color: var(--blue-dark);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+    flex: 1;
+}
+
+.project-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.project-tags span {
+    background-color: var(--cream);
+    color: var(--blue-accent);
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 999px;
+    border: 1px solid var(--border);
+}
+
+.project-card a {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--blue-accent);
+    margin-top: 4px;
+}
+
+.project-card a:hover {
+    color: var(--blue-dark);
+}
+
+/* --- Footer --- */
+footer {
+    background-color: var(--black);
+    color: var(--blue-light);
+    text-align: center;
+    padding: 22px 40px;
+    font-size: 0.9rem;
+    border-top: 3px solid var(--blue-accent);
+}
+
+footer a {
+    color: var(--blue-light);
+    font-weight: 600;
+}
+
+footer a:hover {
+    color: #ffffff;
+    text-decoration: none;
 }
